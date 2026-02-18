@@ -1,7 +1,7 @@
 
 // TypeScript version
 try {
-    const students: { grade: number }[] = [];
+    const students = [];
     const topStudents = students.filter(student => student.grade > 80);
     console.log(topStudents);
 } catch (error) {
