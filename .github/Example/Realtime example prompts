@@ -1,0 +1,88 @@
+Sql operations:
+When generating SQL queries:
+- Always use parameterised queries or prepared statements
+- Validate and sanitise all input before use
+- Limit result sets with pagination
+- Use principle of least privilege for database connections
+
+
+User input handling:
+For any function handling user input:
+- Validate input type and format
+- Sanitise strings to prevent XSS
+- Check for maximum length limits
+- Reject unexpected characters for sensitive fields
+
+
+Authentication:
+For authentication-related code:
+- Never store passwords in plain text
+- Use Argon2id for password hashing (recommended by OWASP)
+  - Alternatives: scrypt, or bcrypt with a high work factor for compatibility requirements
+- Implement rate limiting
+- Use secure session management
+
+Use these prompts to scaffold a complete project structure:
+Project Structure:
+"Create a project structure with folders for src, tests, and public directories."
+
+Initial Files:
+"Generate a package.json file with a basic project configuration for a Node.js application."
+
+Modular Structure:
+"Add subfolders models, controllers, and views inside the src folder for better modularity."
+
+
+Context and security aware prompt:
+Input Validation:
+"Write a function to validate and sanitise user registration data (email, password, username) following OWASP guidelines."
+
+Secure Database Query:
+"Generate a function to fetch user data by ID using parameterised queries with proper error handling."
+
+
+Using Inline Suggestions:
+/**
+ * // Copilot will suggest documentation here
+ */
+function calculateCompoundInterest(principal, rate, time, n) {
+  return principal * Math.pow((1 + rate / n), n * time);
+}
+
+For existing undocumented code, use Ask mode:
+Prompt:
+"Generate comprehensive JSDoc documentation for all functions in this file, including parameter types, return values, exceptions thrown, and usage examples."
+
+Use Copilot to explain complex code for documentation purposes:
+Prompt:
+"Explain the logic in this addBook function, especially how duplicates are handled. Format the explanation as a documentation comment that could be added above the function."
+
+Another Prompt:
+"Describe how this searchBooks function works and how it filters by title or genre. Write it as internal documentation for other developers."
+
+For REST APIs, generate endpoint documentation:
+Prompt:
+"Generate OpenAPI/Swagger documentation for this Express router file. Include request/response schemas, status codes, and example payloads."
+
+Debugging with Copilot
+When code doesn't work as expected, use Copilot to debug:
+Identify Issues
+Prompt:
+"Analyse this function and identify any potential bugs, edge cases, or logical errors."
+
+Fix Specific Errors
+Prompt:
+"I'm getting 'TypeError: Cannot read property of undefined' when calling searchBooks. What could cause this and how do I fix it?"
+
+Alternative Approaches
+Prompt:
+"Research alternative error-handling strategies for saving data to local storage. Which approach would be most robust?"
+
+
+
+
+
+
+
+
+
